@@ -2,6 +2,7 @@
 
 This is a personal portfolio website built using Vite+React, Tailwind CSS, and Framer Motion to showcase my skills, projects, and experience.
 
+### Dont forget to star ⭐
 ![GitHub stars](https://img.shields.io/github/stars/sathishk-dev/illustration-portfolio?style=social)
 
 ## Features
