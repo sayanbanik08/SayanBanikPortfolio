@@ -2,9 +2,6 @@
 
 This is a personal portfolio website built using Vite+React, Tailwind CSS, and Framer Motion to showcase my skills, projects, and experience.
 
-### Dont forget to star ⭐
-![GitHub stars](https://img.shields.io/github/stars/sathishk-dev/illustration-portfolio?style=social)
-
 ## Features
 - **Responsive Design** – Works on all screen sizes.
 - **Smooth Animations** – Powered by Framer Motion for interactive user experience.
@@ -48,6 +45,9 @@ To deploy the portfolio website, you can use platforms like:
 
 ## How to Contribute
 If you’d like to contribute or improve this project, feel free to fork the repository and submit a pull request.
+
+## 🙌 Show Your Support
+If you like this project, please star it and share it with your friends!
 
 ## Contact
 If you have any questions or suggestions, feel free to reach out via:
