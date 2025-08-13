@@ -1,14 +1,13 @@
-import React from 'react';
+import { motion } from "framer-motion";
 import { TbExternalLink } from "react-icons/tb";
-import { motion } from 'framer-motion';
 
 const projects = [
   {
     id: 1,
-    title: "Crypto Screener Application",
-    description: "A powerful tool for tracking and analyzing cryptocurrency trends in real-time.",
-    image: "/assets/project1.png",
-    link: "#"
+    title: "Building Blocks Ggame",
+    description: "A fun and strategic puzzle game that builds logic and creativity.",
+    image: "/assets/Building Blocks.jpeg",
+    link: "https://building-blocks-game-85f5.vercel.app/"
   },
   {
     id: 2,

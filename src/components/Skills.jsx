@@ -1,43 +1,37 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaJs, FaReact, FaNodeJs, FaPython, FaDatabase,FaJava } from "react-icons/fa";
+import { FaJs, FaReact, FaNodeJs, FaPython, FaDatabase,FaJava, FaHtml5, FaCss3, FaCode, FaPalette, FaCodiepie, FaGooglePlus, FaCodeBranch, FaConnectdevelop, FaFreeCodeCamp, FaQrcode } from "react-icons/fa";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { RiNextjsFill,RiTailwindCssFill } from "react-icons/ri";
 import { CgFigma } from "react-icons/cg";
+import fullStackLogo from "../assets/full-stack-logo-img.webp";
 
 export default function Skills() {
   const [skills] = useState([
-    { id: 1, name: "JavaScript", icon: <FaJs size={50} /> },
-    { id: 2, name: "React", icon: <FaReact size={50} /> },
-    { id: 3, name: "Node.js", icon: <FaNodeJs size={50} /> },
-    { id: 4, name: "Python", icon: <FaPython size={50} /> },
-    { id: 5, name: "MongoDB", icon: <FaDatabase size={50} /> },
-    { id: 6, name: "Java", icon: <FaJava size={50} /> },
-    { id: 7, name: "Postgresql", icon: <BiLogoPostgresql size={50} /> },
-    { id: 8, name: "Next.js", icon: <RiNextjsFill size={50} /> },
-    { id: 9, name: "Tailwind", icon: <RiTailwindCssFill size={50} /> },
-    { id: 10, name: "Figma", icon: <CgFigma size={50} /> },
+    { id: 1, name: "HTML", icon: <FaHtml5 size={50} /> },
+    { id: 2, name: "CSS", icon: <FaCss3 size={50} /> },
+    { id: 3, name: "JavaScript", icon: <FaJs size={50} /> },
+    { id: 4, name: "React.js", icon: <FaReact size={50} /> },
+    { id: 5, name: "Node.js", icon: <FaNodeJs size={50} /> },
+    { id: 6, name: "Express.js", icon: <FaCode size={50} /> },
+    { id: 7, name: "MongoDB", icon: <FaDatabase size={50} /> },
+    { id: 8, name: "Java", icon: <FaJava size={50} /> },
+    { id: 9, name: "Python", icon: <FaPython size={50} /> },
+    { id: 10, name: "C", icon: <FaCodiepie size={50} /> },
+    { id: 11, name: "C++", icon: <FaCodiepie size={50} /> },
   ]);
 
   const [experiences] = useState([
     {
       id: 1,
-      company: "Google",
-      role: "Lead Software Engineer",
-      period: "Nov 2019 - Present",
+      company: "(Personal Projects)",
+      role: "Full-Stack Developer",
+      period: "Nov 2025 - Present",
       description:
-        "Developed innovative solutions for Google's core search algorithms, optimizing search accuracy and user experience. Developed innovative solutions for Google's core search algorithms, optimizing search accuracy and user experience. Developed innovative solutions for Google's core search algorithms, optimizing search accuracy and user experience. Developed innovative solutions for Google's core search algorithms, optimizing search accuracy and user experience.",
-      logo: "/assets/google.svg",
+        "Independently designing and developing full-stack web applications with a focus on clean architecture, responsive design, and practical functionality. Utilizing technologies such as React, Node.js, Express, and MongoDB to build user-friendly and scalable solutions.Responsible for the entire development process, including planning, front-end and back-end development, database integration, and deployment. Continuously improving technical skills through hands-on experience, online courses, and project-based learning. Committed to writing efficient, maintainable code and following modern development best practices.",
+      logo: fullStackLogo,
     },
-    {
-      id: 2,
-      company: "Youtube",
-      role: "Software Engineer",
-      period: "Jan 2017 - Oct 2019",
-      description:
-        "At Youtube, I served as a  Software Engineer, focusing on the design and implementation of backend systems for the social media giant's dynamic platform. Working on projects that involved large-scale data processing and user engagement features, I leveraged my expertise to ensure seamless functionality and scalability.",
-      logo: "/assets/youtube.svg",
-    },
+    
   ]);
 
   return (
