@@ -18,11 +18,11 @@ This is a personal portfolio website built using Vite+React, Tailwind CSS, and F
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/sathishk-dev/illustration-portfolio.git
+   git clone https://github.com/sayanbanik08/SayanBanikPortfolio.git
    ```
 2. Navigate to the project directory:
    ```sh
-   cd illustration-portfolio
+   cd SayanBanikPortfolio
    ```
 3. Install dependencies:
    ```sh
@@ -44,7 +44,7 @@ To deploy the portfolio website, you can use platforms like:
 - **GitHub Pages** (with additional configurations)
 
 ## How to Contribute
-If you’d like to contribute or improve this project, feel free to fork the repository and submit a pull request.
+If you'd like to contribute or improve this project, feel free to fork the repository and submit a pull request.
 
 ## 🙌 Show Your Support
 If you like this project, please star it and share it with your friends!
