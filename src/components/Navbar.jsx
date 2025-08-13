@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { TbDownload } from "react-icons/tb";
 import { HiOutlineMenu, HiX } from "react-icons/hi";
 import { HiChevronDown } from "react-icons/hi";
+import nameLogo from "../assets/name2.png";
 
 export default function Navbar() {
   const [hasShadow, setHasShadow] = useState(false);
@@ -71,7 +72,7 @@ export default function Navbar() {
           whileTap={{ scale: 0.9 }}
           onClick={() => scrollToSection("home")}
           className="h-8 cursor-pointer"
-          src="/src/assets/name2.png"
+          src={nameLogo}
           alt="Logo"
         />
 
