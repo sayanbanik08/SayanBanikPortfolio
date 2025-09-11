@@ -1,19 +1,21 @@
 import { motion } from "framer-motion";
 import { TbExternalLink } from "react-icons/tb";
+import project1Image from "/public/assets/1.jpg";
+import project2Image from "/public/assets/2.jpg";
 
 const projects = [
   {
     id: 1,
     title: "Building Blocks Game",
     description: "A fun and strategic puzzle game that builds logic and creativity.",
-    image: "/assets/1.jpg",
+    image: project1Image,
     link: "https://building-blocks-game-85f5.vercel.app/"
   },
   {
     id: 2,
     title: "Spider Merger",
     description: "A powerful tool to merge multiple PDF files into a single, organized document with ease.",
-    image: "/assets/2.jpg",
+    image: project2Image,
     link: "#"
   }
 ];
