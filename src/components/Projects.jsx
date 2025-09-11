@@ -4,16 +4,16 @@ import { TbExternalLink } from "react-icons/tb";
 const projects = [
   {
     id: 1,
-    title: "Building Blocks Ggame",
+    title: "Building Blocks Game",
     description: "A fun and strategic puzzle game that builds logic and creativity.",
-    image: "/assets/Building Blocks.jpeg",
+    image: "/assets/1.jpg",
     link: "https://building-blocks-game-85f5.vercel.app/"
   },
   {
     id: 2,
-    title: "Stock Market Dashboard",
-    description: "An interactive dashboard to monitor stock prices and market trends efficiently.",
-    image: "/assets/project1.png",
+    title: "Spider Merger",
+    description: "A powerful tool to merge multiple PDF files into a single, organized document with ease.",
+    image: "/assets/2.jpg",
     link: "#"
   }
 ];
