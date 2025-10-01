@@ -15,6 +15,13 @@ const projects = [
     description: "A powerful tool to merge multiple PDF files into a single, organized document with ease.",
     image: "/assets/2.jpg",
     link: "https://spider-merger.vercel.app/"
+  },
+  {
+    id: 3,
+    title: "Woolenza",
+    description: "Experience the warmth of luxury with Woolenza’s finest wool collections. This live site is now in use.",
+    image: "/assets/3.jpg",
+    link: "https://woolenza.vercel.app/"
   }
 ];
 
