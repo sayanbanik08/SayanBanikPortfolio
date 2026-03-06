@@ -9,9 +9,10 @@ import { isMobile } from "react-device-detect";
 
 const ThemeSwitcher = () => {
   const themeSwitcherRef = useRef<HTMLDivElement>(null);
-  const { nextTheme, theme } = useThemeStore();
+  const { nextTheme } = useThemeStore();
   const isActive = usePortalStore((state) => state.activePortalId);
-  const [positionClass, setPositionClass] = useState<string>('');
+  const [positionClass, setPositionClass] = useState<string>('top-6 right-6');
+  const [mobileTopStyle, setMobileTopStyle] = useState<React.CSSProperties>({});
   const toggleTheme = () => nextTheme();
 
   useGSAP(() => {
@@ -23,19 +24,18 @@ const ThemeSwitcher = () => {
   }, [isActive]);
 
   useEffect(() => {
-    setPositionClass(isMobile ? 'top-2 right-2' : 'top-6 right-6');
+    // On mobile, offset by safe-area to stay clear of notch / status bar
+    if (isMobile) {
+      setPositionClass('right-2');
+      setMobileTopStyle({ top: 'max(0.5rem, env(safe-area-inset-top, 0.5rem))' });
+    } else {
+      setPositionClass('top-6 right-6');
+      setMobileTopStyle({});
+    }
   }, [isMobile]);
 
-  useEffect(() => {
-    const metaThemeColor = document.querySelector('meta[name="theme-color"]')
-
-    if (metaThemeColor) {
-      metaThemeColor.setAttribute('content', theme.color);
-    }
-  }, [theme.color]);
-
   return (
-    <div className={`fixed ${positionClass}`} ref={themeSwitcherRef} style={{ opacity: 0, zIndex: 2 }}>
+    <div className={`fixed ${positionClass}`} ref={themeSwitcherRef} style={{ opacity: 0, zIndex: 2, ...mobileTopStyle }}>
       <div className="flex items-center justify-center gap-2">
         <a className="hover:cursor-pointer" onClick={toggleTheme}>
           <Image src="icons/night-mode.svg" width={24} height={24} alt="night mode" loading="lazy" />

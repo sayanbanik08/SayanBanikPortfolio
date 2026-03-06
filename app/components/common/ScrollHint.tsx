@@ -49,7 +49,7 @@ export const ScrollHint = () => {
   const svgSrc = hintText === 'PAN' ? 'icons/chevrons-left-right.svg' : 'icons/chevrons-up-down.svg';
 
   return (
-    <div className="fixed w-full bottom-5 scroll-hint" style={{ opacity: 0 }}>
+    <div className="fixed w-full scroll-hint" style={{ opacity: 0, bottom: 'max(1.25rem, env(safe-area-inset-bottom, 1.25rem))' }}>
       <div className="flex items-center justify-center animate-pulse">
         { showScrollHint }
         <Image src={svgSrc} width={18} height={18} alt="night mode" loading="lazy" />

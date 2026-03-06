@@ -2,33 +2,27 @@ import { FooterLink } from "../types";
 
 export const FOOTER_LINKS: FooterLink[] = [
   {
-    name: 'LinkedIn',
-    hoverText: 'Connect with me',
-    icon: 'icons/linkedin.svg',
-    url: 'https://www.linkedin.com/in/mohit-virli-4780b6112/',
+    name: '10th Result',
+    hoverText: 'X (WBBSE) — 50%',
+    icon: 'icons/file.svg',
+    url: './10th12th-result (1).pdf',
   },
   {
-    name: 'GitHub',
-    hoverText: 'Open Sourcing',
-    icon: 'icons/github.svg',
-    url: 'https://github.com/mohitvirli',
+    name: '12th Result',
+    hoverText: 'XII (WBCHE) — 67%',
+    icon: 'icons/file.svg',
+    url: './10th12th-result (1).pdf',
   },
   {
-    name: 'Spotify',
-    hoverText: 'Curated playlists',
-    icon: 'icons/spotify.svg',
-    url: 'https://open.spotify.com/user/21hr4w2hzp4ceidewwsb4bxoy',
-  },
-  {
-    name: 'Instagram',
-    hoverText: '@clevirli',
-    icon: 'icons/instagram.svg',
-    url: 'https://www.instagram.com/clevirli/',
+    name: 'Graduation',
+    hoverText: 'BCA — CGPA 8.62',
+    icon: 'icons/file.svg',
+    url: './graduation-result.pdf',
   },
   {
     name: 'Resume',
     hoverText: 'Download',
     icon: 'icons/file.svg',
-    url: './Mohit Virli - Resume.pdf',
+    url: './Resume - Sayan Banik (1) (1).pdf',
   }
 ];

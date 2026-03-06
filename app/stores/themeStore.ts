@@ -34,7 +34,17 @@ export const useThemeStore = create<ThemeStore>()(
     }),
     {
       name: "theme-storage",
+      version: 2,
       partialize: (state) => ({ theme: state.theme }),
+      migrate: (persistedState: unknown) => {
+        const state = persistedState as { theme?: Theme };
+        // If the persisted theme color doesn't match any current theme, reset to default
+        const isValid = AvailableThemes.some(t => t.color === state?.theme?.color);
+        if (!isValid) {
+          return { theme: AvailableThemes[0] };
+        }
+        return state;
+      },
     }
   )
 );

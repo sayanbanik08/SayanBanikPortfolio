@@ -9,7 +9,6 @@ import { isMobile } from "react-device-detect";
 
 import { useThemeStore } from "@stores";
 
-import AwwardsBadge from "./AwwardsBadge";
 import Preloader from "./Preloader";
 import ProgressLoader from "./ProgressLoader";
 import { ScrollHint } from "./ScrollHint";
@@ -17,7 +16,7 @@ import ThemeSwitcher from "./ThemeSwitcher";
 // import {Perf} from "r3f-perf"
 
 const CanvasLoader = (props: { children: React.ReactNode }) => {
-  const ref= useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const backgroundColor = useThemeStore((state) => state.theme.color);
   const { progress } = useProgress();
@@ -38,7 +37,7 @@ const CanvasLoader = (props: { children: React.ReactNode }) => {
         width: 'calc(100% - 2rem)',
         height: 'calc(100% - 2rem)',
       };
-      setCanvasStyle({ ...canvasStyle, ...borderStyle})
+      setCanvasStyle({ ...canvasStyle, ...borderStyle })
     }
   }, [isMobile]);
 
@@ -58,6 +57,25 @@ const CanvasLoader = (props: { children: React.ReactNode }) => {
       duration: 1,
       ...noiseOverlayStyle,
     });
+
+    if (typeof window !== 'undefined') {
+      // Dynamically update the mobile browser theme-color to inherit the site color
+      const updateMetaTag = (name: string, content: string) => {
+        let metaTag = document.querySelector(`meta[name='${name}']`);
+        if (!metaTag) {
+          metaTag = document.createElement("meta");
+          metaTag.setAttribute("name", name);
+          document.head.appendChild(metaTag);
+        }
+        metaTag.setAttribute("content", content);
+      };
+
+      // Keep Safari toolbar white always
+      updateMetaTag("theme-color", "#ffffff");
+      updateMetaTag("apple-mobile-web-app-status-bar-style", "black-translucent");
+      updateMetaTag("apple-mobile-web-app-capable", "yes");
+      updateMetaTag("mobile-web-app-capable", "yes");
+    }
   }, [backgroundColor]);
 
   const noiseOverlayStyle = {
@@ -68,8 +86,8 @@ const CanvasLoader = (props: { children: React.ReactNode }) => {
   };
 
   return (
-    <div className="h-[100dvh] wrapper relative">
-      <div className="h-[100dvh] relative" ref={ref}>
+    <div className="wrapper relative">
+      <div className="relative w-full h-full" ref={ref}>
         <Canvas className="base-canvas"
           shadows
           style={canvasStyle}
@@ -86,11 +104,28 @@ const CanvasLoader = (props: { children: React.ReactNode }) => {
 
             <Preload all />
           </Suspense>
-          <AdaptiveDpr pixelated/>
+          <AdaptiveDpr pixelated />
         </Canvas>
         <ProgressLoader progress={progress} />
+        {/* White fade from top */}
+        <div
+          className="absolute top-0 left-0 w-full pointer-events-none"
+          style={{
+            height: '180px',
+            background: 'linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5) 35%, rgba(255,255,255,0.15) 65%, rgba(255,255,255,0) 100%)',
+            zIndex: 1,
+          }}
+        />
+        {/* White fade from bottom */}
+        <div
+          className="absolute bottom-0 left-0 w-full pointer-events-none"
+          style={{
+            height: '180px',
+            background: 'linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5) 35%, rgba(255,255,255,0.15) 65%, rgba(255,255,255,0) 100%)',
+            zIndex: 1,
+          }}
+        />
       </div>
-      <AwwardsBadge />
       <ThemeSwitcher />
       <ScrollHint />
     </div>
